@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatApp</title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="./js/client.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 h-screen flex items-center justify-center">
+    <!-- ChatApp Container -->
+    <div
+      class="bg-white shadow-lg rounded-lg w-4/5 max-w-3xl h-4/5 flex flex-col"
+    >
+      <!-- Header -->
+      <div
+        class="bg-blue-500 text-white p-4 flex items-center justify-between rounded-t-lg"
+      >
+        <h1 class="text-xl font-semibold">ChatApp</h1>
+        <button class="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
+          Logout
+        </button>
+      </div>
+
+      <!-- Chat Area -->
+      <div class="flex-grow overflow-y-auto p-4 space-y-4 container">
+        <!-- Example Messages -->
+        <!-- Left-aligned message -->
+        <div class="flex justify-start">
+          <div class="bg-gray-200 p-3 rounded-lg max-w-xs">
+            <p class="text-sm">Hello! How can I help you today?</p>
+          </div>
+        </div>
+
+        <!-- Right-aligned message -->
+        <div class="flex justify-end">
+          <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+            <p class="text-sm">I have a question about the project.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <form action="#" id="send-container">
+        <div class="p-4 bg-gray-200 flex items-center space-x-3 rounded-b-lg">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            name="messageInp"
+            id="messageInp"
+          />
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
